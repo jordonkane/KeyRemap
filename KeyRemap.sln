@@ -1,9 +1,10 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyRemap", "KeyRemap.csproj", "{0DE24EC6-E568-4AE0-8769-C92480C5E873}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyRemap", "KeyRemap\KeyRemap.csproj", "{0DE24EC6-E568-4AE0-8769-C92480C5E873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyRemap.Tests", "KeyRemap.Tests\KeyRemap.Tests.csproj", "{12345678-1234-1234-1234-123456789ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +16,10 @@ Global
 		{0DE24EC6-E568-4AE0-8769-C92480C5E873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE24EC6-E568-4AE0-8769-C92480C5E873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE24EC6-E568-4AE0-8769-C92480C5E873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12345678-1234-1234-1234-123456789ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12345678-1234-1234-1234-123456789ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12345678-1234-1234-1234-123456789ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12345678-1234-1234-1234-123456789ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
