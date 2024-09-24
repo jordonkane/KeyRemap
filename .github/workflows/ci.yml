@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '6.0.x' # Change to your desired .NET version (6.x, 7.x)
 
     - name: Restore dependencies
-      run: dotnet restore ./KeyRemap/KeyRemap.csproj
+      run: dotnet restore ./KeyRemap.sln
 
     - name: Build
-      run: dotnet build ./KeyRemap/KeyRemap.csproj --configuration Release --no-restore
+      run: dotnet build ./KeyRemap.sln --configuration Release --no-restore
 
     - name: Run tests
       run: dotnet test ./KeyRemap.Tests/KeyRemap.Tests.csproj --no-restore --verbosity normal
