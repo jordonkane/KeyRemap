@@ -27,4 +27,5 @@ jobs:
     - name: Build
       run: dotnet build ./KeyRemap/KeyRemap.csproj --configuration Release --no-restore
 
-    
+    - name: Run tests
+      run: dotnet test ./KeyRemap.Tests/KeyRemap.Tests.csproj --no-restore --verbosity normal
