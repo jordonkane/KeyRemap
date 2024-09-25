@@ -19,10 +19,7 @@ namespace KeyRemap
             switch (args[0].ToLower())
             {
                 case "remap":
-                    break;
-                case "reset":
-                    break;
-                case "list-remapped":
+                    KeyMapper.StartRemapping();
                     break;
                 default:
                     DisplayHelp();
@@ -34,8 +31,6 @@ namespace KeyRemap
         {
             Console.WriteLine("Usage:");
             Console.WriteLine("  keyremap.exe remap            - Start the key remapping process.");
-            Console.WriteLine("  keyremap.exe list-remapped    - List all remapped keys.");
-            Console.WriteLine("  keyremap.exe reset            - Reset all key mappings to default.");
         }
     }
 
