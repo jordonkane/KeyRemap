@@ -10,6 +10,8 @@ namespace KeyRemap
     {
         public static void StartRemapping()
         {
+            RegistryManager registryManager = new RegistryManager();
+
             // capture the key the user wants to remap
             Console.WriteLine("Press the key you want to remap:");
             string originalKey = UserInput.CaptureKey();
@@ -52,7 +54,7 @@ namespace KeyRemap
 
             // build the scancode map and perform key remapping in the registry
             byte[] scancodeMap = ScancodeMapBuilder.BuildScancodeMap(originalScancode, newScancode);
-            RegistryManager.RemapKeyInRegistry(scancodeMap);
+            registryManager.RemapKeyInRegistry(scancodeMap);
             Console.WriteLine("Key remapped. Please restart your computer for the changes to take effect.");
         }
     }
