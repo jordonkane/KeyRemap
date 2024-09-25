@@ -14,7 +14,7 @@ namespace KeyRemap
             Console.WriteLine("Press the key you want to remap:");
             string originalKey = UserInput.CaptureKey();
 
-            // get the scancode from the key name
+            // get scancode from key name
             int originalScancode = ScancodeMapBuilder.GetScancodeFromKeyName(originalKey);
             if (originalScancode == -1)
             {
@@ -22,7 +22,7 @@ namespace KeyRemap
                 return;
             }
 
-            // show the key name and ask for confirmation
+            // ask for confirmation
             Console.WriteLine($"You pressed: {originalKey}. Do you want to remap this key? (y/n)");
             if (!UserInput.Confirm())
             {
@@ -30,21 +30,19 @@ namespace KeyRemap
                 return;
             }
 
-            // show the list of available key names as reference
-            Console.WriteLine("Here is a list of available keys to remap it to:");
+            // display available keys
             ScancodeMapBuilder.DisplayAvailableKeyNames();
 
-            // ask for the new key name
+            // get the new key
             string newKeyName = UserInput.Prompt("Type the name of the key you want to remap it to:");
             int newScancode = ScancodeMapBuilder.GetScancodeFromKeyName(newKeyName);
-
             if (newScancode == -1)
             {
                 Console.WriteLine($"Invalid key: {newKeyName}. Remapping cancelled.");
                 return;
             }
 
-            // ask for final confirmation
+            // final confirmation
             Console.WriteLine($"Are you sure you want to remap {originalKey} to {newKeyName}? (y/n)");
             if (!UserInput.Confirm())
             {
@@ -52,10 +50,10 @@ namespace KeyRemap
                 return;
             }
 
-            // perform the key remapping in the registry
-            RegistryManager.RemapKeyInRegistry(originalScancode, newScancode);
+            // build the scancode map and perform key remapping in the registry
+            byte[] scancodeMap = ScancodeMapBuilder.BuildScancodeMap(originalScancode, newScancode);
+            RegistryManager.RemapKeyInRegistry(scancodeMap);
             Console.WriteLine("Key remapped. Please restart your computer for the changes to take effect.");
         }
     }
-
 }
