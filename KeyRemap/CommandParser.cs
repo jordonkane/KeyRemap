@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KeyRemap
 {
-    class CommandParser
+    public class CommandParser
     {
         public static void Parse(string[] args)
         {
