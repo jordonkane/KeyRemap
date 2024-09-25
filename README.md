@@ -1,5 +1,5 @@
 # KeyRemap
-KeyRemap ⌨️ is a .NET Core desktop application that enables users to remap keyboard keys via the Windows Registry, providing a simplified interface for customizing key mappings.
+KeyRemap ⌨️ is a .NET desktop application that enables users to remap keyboard keys via the Windows Registry, providing a simplified interface for customizing key mappings.
 
 ## Features
 Remap Keys: Choose a key to remap and assign it to another key.
