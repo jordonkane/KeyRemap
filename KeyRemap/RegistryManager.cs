@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KeyRemap.Interface;
 using Microsoft.Win32;
 
 namespace KeyRemap
 {
 
-    class RegistryManager
+    public class RegistryManager : IRegistryManager
     {
-        private static string registryPath = @"SYSTEM\CurrentControlSet\Control\Keyboard Layout";
+        private string registryPath = @"SYSTEM\CurrentControlSet\Control\Keyboard Layout";
 
         // write a new scancode map to the registry
-        public static void RemapKeyInRegistry(byte[] scancodeMap)
+        public void RemapKeyInRegistry(byte[] scancodeMap)
         {
             // open the registry key with write access
             RegistryKey key = Registry.LocalMachine.OpenSubKey(registryPath, writable: true);
@@ -31,7 +32,7 @@ namespace KeyRemap
         }
 
         // reset the key mappings (reset the scancode map)
-        public static void ResetKeyMappings()
+        public void ResetKeyMappings()
         {
             RegistryKey key = Registry.LocalMachine.OpenSubKey(registryPath, writable: true);
             if (key != null)
